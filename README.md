@@ -155,14 +155,3 @@ The collector is deployed in DaemonSet mode via Helm values.
 5. Observe traces and metrics in the collector logs  
 
 ---
-
-## What Interviewers Should Notice
-
-This project demonstrates:
-- Correct OpenTelemetry usage  
-- Kubernetes-native observability design  
-- Clear DaemonSet vs Deployment reasoning  
-- Helm-based operational maturity  
-- Cloud-agnostic thinking  
-
----
