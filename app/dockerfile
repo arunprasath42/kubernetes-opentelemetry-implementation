@@ -1,0 +1,14 @@
+FROM eclipse-temurin:17-jre
+
+WORKDIR /app
+
+COPY target/otel-demo-0.0.1.jar app.jar
+COPY opentelemetry-javaagent.jar /otel/opentelemetry-javaagent.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java",
+  "-javaagent:/otel/opentelemetry-javaagent.jar",
+  "-Dotel.service.name=demo-service",
+  "-Dotel.exporter.otlp.endpoint=http://otel-collector:4317",
+  "-jar","app.jar"]
